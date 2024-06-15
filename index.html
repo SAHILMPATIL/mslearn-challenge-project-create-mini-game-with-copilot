@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <h1>Rock-Paper-Scissors Game</h1>
+    {% if request.args.get('invalid') %}
+    <p style="color: red;">Invalid option. Please choose rock, paper, or scissors.</p>
+    {% endif %}
+    <form action="{{ url_for('play') }}" method="post">
+        <label for="choice">Enter your choice:</label>
+        <select name="choice" id="choice">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+        <button type="submit">Play</button>
+    </form>
+</body>
+</html>
+
